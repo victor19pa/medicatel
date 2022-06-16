@@ -1,13 +1,30 @@
 import axios from "axios";
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useReducer, useState } from "react";
 import { url } from "../common/general";
+import { types } from "../types";
+import { authReducer } from "./useReducer";
 
 export const UserContext = createContext();
 
+//estado inicial
+export const authInitialState = {
+  logged: false,
+  name: "",
+};
+
+const init = () => {
+  return JSON.parse(localStorage.getItem("userActive")) || { logged: false };
+};
+
 const UserProvider = (props) => {
+  const [userState, dispatch] = useReducer(authReducer, authInitialState, init);
   const [userInfo, setUserInfo] = useState({});
   const [collaboratorsInfo, setCollaboratorsInfo] = useState([]);
-  // const [flagLogin, setFlagLogin] = useState(false);
+
+  useEffect(() => {
+    if (!userState) return;
+    localStorage.setItem("user", JSON.stringify(userState));
+  }, [userState]);
 
   const login = async (body) => {
     let requestURL = url + "login";
@@ -18,11 +35,23 @@ const UserProvider = (props) => {
       },
     });
     setUserInfo(usuario.data);
+    dispatch({
+      type: types.login,
+      payload: { name: "pruebas" },
+    });
+  };
+
+  const logout = () => {
+    setUserInfo({});
+    setCollaboratorsInfo([]);
+    dispatch({
+      type: types.logout,
+      payload: {},
+    });
   };
 
   const getCollaborators = async () => {
     let requestURL = url + "colaboradores";
-
     const colaboradores = await axios.get(requestURL, {
       auth: {
         username: "api-Test",
@@ -30,18 +59,19 @@ const UserProvider = (props) => {
       },
     });
     setCollaboratorsInfo(colaboradores.data);
-    // console.log(colaboradores.data);
   };
 
   return (
     <UserContext.Provider
       value={{
+        userState,
         userInfo,
         setUserInfo,
         collaboratorsInfo,
         setCollaboratorsInfo,
         getCollaborators,
         login,
+        logout,
       }}
     >
       {props.children}

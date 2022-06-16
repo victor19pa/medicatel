@@ -9,19 +9,18 @@ import { UserContext } from "../../context/UserContext";
 
 const SecondaryListItems = () => {
   const navigate = useNavigate();
-  const { setCollaboratorsInfo, setUserInfo } = useContext(UserContext);
+  const { logout } = useContext(UserContext);
 
-  const logout = () => {
+  const handleLogout = () => {
+    logout();
     navigate("/login");
-    setCollaboratorsInfo([{}]);
-    setUserInfo({});
   };
   return (
     <>
       <ListSubheader component="div" inset>
         Opciones
       </ListSubheader>
-      <ListItemButton onClick={logout}>
+      <ListItemButton onClick={handleLogout}>
         <ListItemIcon>
           <LogoutIcon />
         </ListItemIcon>
