@@ -18,6 +18,7 @@ const mdTheme = createTheme();
 const Collaborators = () => {
   const [open, setOpen] = useState(true);
   const { collaboratorsInfo } = useContext(UserContext);
+  console.log(collaboratorsInfo);
 
   const toggleDrawer = () => {
     setOpen(!open);

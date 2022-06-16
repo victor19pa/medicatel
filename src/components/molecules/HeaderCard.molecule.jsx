@@ -2,7 +2,7 @@ import React from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
-const HeaderCard = () => {
+const HeaderCard = ({ nombre, apellido, cargo, ciudad }) => {
   return (
     <Grid container marginTop={1}>
       <Grid item xs={2} sm={3} md={3} lg={3} justifyContent="center">
@@ -17,15 +17,17 @@ const HeaderCard = () => {
 
       <Grid item xs={10} sm={9} lg={9} justifyContent="center" paddingLeft={2}>
         <Typography variant="string" color="#005F7F" align="center">
-          <b>Juan Pedro Perez</b>
+          <b>
+            {nombre} {apellido}
+          </b>
         </Typography>
         <br />
         <Typography variant="string" color="#00B2E3" align="center">
-          Cargo
+          {cargo}
         </Typography>
         <br />
         <Typography variant="string" color="#707070" align="center">
-          Ciudad
+          {ciudad}
         </Typography>
       </Grid>
     </Grid>

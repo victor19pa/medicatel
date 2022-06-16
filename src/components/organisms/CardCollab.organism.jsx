@@ -14,6 +14,8 @@ const CardCollab = ({ colaboradorData }) => {
   const handleCloseModal = () => setOpen(false);
 
   // console.log("ACA: ", colaboradorData);
+  const { apellido, cargo, ciudad, correo, nombre, telefono, id } =
+    colaboradorData;
 
   return (
     <>
@@ -27,11 +29,16 @@ const CardCollab = ({ colaboradorData }) => {
             backgroundColor: "#FFFFFF",
           }}
         >
-          <HeaderCollaboratorCard />
+          <HeaderCollaboratorCard
+            apellido={apellido}
+            nombre={nombre}
+            cargo={cargo}
+            ciudad={ciudad}
+          />
           <Divider sx={{ my: 1 }} />
-          <BodyCollaboratorCard />
-          <BodyCollaboratorCard />
-          <BodyCollaboratorCard />
+          <BodyCollaboratorCard data={id} />
+          <BodyCollaboratorCard data={`(504) - ${telefono}`} />
+          <BodyCollaboratorCard data={correo} />
         </Paper>
       </Grid>
       <Modal
@@ -54,11 +61,16 @@ const CardCollab = ({ colaboradorData }) => {
             width: width < 600 ? width - 10 : 500,
           }}
         >
-          <HeaderCollaboratorCard />
+          <HeaderCollaboratorCard
+            apellido={apellido}
+            nombre={nombre}
+            cargo={cargo}
+            ciudad={ciudad}
+          />
           <Divider sx={{ my: 1 }} />
-          <BodyCollaboratorCard />
-          <BodyCollaboratorCard />
-          <BodyCollaboratorCard />
+          <BodyCollaboratorCard data={id} />
+          <BodyCollaboratorCard data={`(504) - ${telefono}`} />
+          <BodyCollaboratorCard data={correo} />
         </Paper>
       </Modal>
     </>
