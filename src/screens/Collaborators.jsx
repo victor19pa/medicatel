@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
@@ -17,8 +17,11 @@ const mdTheme = createTheme();
 
 const Collaborators = () => {
   const [open, setOpen] = useState(true);
-  const { collaboratorsInfo } = useContext(UserContext);
-  console.log(collaboratorsInfo);
+  const { collaboratorsInfo, getCollaborators } = useContext(UserContext);
+
+  useEffect(() => {
+    getCollaborators();
+  });
 
   const toggleDrawer = () => {
     setOpen(!open);

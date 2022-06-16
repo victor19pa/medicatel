@@ -13,7 +13,6 @@ const CardCollab = ({ colaboradorData }) => {
   const handleOpenModal = () => setOpen(true);
   const handleCloseModal = () => setOpen(false);
 
-  // console.log("ACA: ", colaboradorData);
   const { apellido, cargo, ciudad, correo, nombre, telefono, id } =
     colaboradorData;
 

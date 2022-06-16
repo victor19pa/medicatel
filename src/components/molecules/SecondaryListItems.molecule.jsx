@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListSubheader from "@mui/material/ListSubheader";
 import LogoutIcon from "@mui/icons-material/Logout";
 import Typography from "@mui/material/Typography";
+import { UserContext } from "../../context/UserContext";
 
 const SecondaryListItems = () => {
   const navigate = useNavigate();
+  const { setCollaboratorsInfo, setUserInfo } = useContext(UserContext);
 
   const logout = () => {
     navigate("/login");
+    setCollaboratorsInfo([{}]);
+    setUserInfo({});
   };
   return (
     <>
