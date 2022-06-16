@@ -39,7 +39,7 @@ const HeaderCollab = () => {
           margin="normal"
           fullWidth
           name="search"
-          label="search"
+          label="Buscar"
           type="search"
           id="search"
           onChange={handleInputSearch}

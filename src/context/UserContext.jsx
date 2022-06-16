@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { url } from "../common/general";
 
 export const UserContext = createContext();
@@ -8,6 +8,10 @@ const UserProvider = (props) => {
   const [userInfo, setUserInfo] = useState({});
   const [collaboratorsInfo, setCollaboratorsInfo] = useState([]);
   // const [flagLogin, setFlagLogin] = useState(false);
+
+  useEffect(() => {
+    getCollaborators();
+  }, []);
 
   const login = async (body) => {
     let requestURL = url + "login";

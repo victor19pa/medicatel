@@ -6,12 +6,14 @@ import Modal from "@mui/material/Modal";
 import { BodyCollaboratorCard, HeaderCollaboratorCard } from "../molecules";
 import useScreenSize from "../../hooks/useScreenSize";
 
-const CardCollab = () => {
+const CardCollab = ({ colaboradorData }) => {
   const { width } = useScreenSize();
   const [open, setOpen] = useState(false);
 
   const handleOpenModal = () => setOpen(true);
   const handleCloseModal = () => setOpen(false);
+
+  // console.log("ACA: ", colaboradorData);
 
   return (
     <>
