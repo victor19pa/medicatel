@@ -53,7 +53,7 @@ const NavBar = ({ open, toggleDrawer }) => {
           noWrap
           sx={{ flexGrow: 1 }}
         >
-          Dashboard
+          Inicio
         </Typography>
       </Toolbar>
     </AppBar>
