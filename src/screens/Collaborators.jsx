@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
@@ -11,11 +11,17 @@ import {
 import Toolbar from "@mui/material/Toolbar";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
+import { UserContext } from "../context/UserContext";
 
 const mdTheme = createTheme();
 
 const Collaborators = () => {
   const [open, setOpen] = useState(true);
+  const { getCollaborators } = useContext(UserContext);
+
+  useEffect(() => {
+    getCollaborators();
+  });
 
   const toggleDrawer = () => {
     setOpen(!open);
@@ -45,9 +51,6 @@ const Collaborators = () => {
           <Container sx={{ my: 4 }} lg={8}>
             <HeaderCollaborator />
             <Grid container spacing={2} marginTop={1}>
-              <CollaboratorCard />
-              <CollaboratorCard />
-              <CollaboratorCard />
               <CollaboratorCard />
             </Grid>
           </Container>

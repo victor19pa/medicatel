@@ -2,10 +2,7 @@ import React from "react";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-// import Typography from "@mui/material/Typography";
 import { CustomButton } from "../atoms";
-import { Divider } from "@mui/material";
-// import { LocalHospitalOutlined } from "@mui/icons-material";
 
 const Features = ({ mainCharacter, title, covid }) => {
   return (
@@ -70,7 +67,7 @@ const Features = ({ mainCharacter, title, covid }) => {
           flexDirection: "column",
           height: "35vh",
           backgroundColor: "#FFFFFF",
-          // justifyContent: "center",
+          justifyContent: "center",
         }}
       >
         {covid && (
@@ -99,13 +96,12 @@ const Features = ({ mainCharacter, title, covid }) => {
               <Typography variant="h4" color="#005F7F" align="center">
                 <b>{mainCharacter}</b>
               </Typography>
-              <Typography variant="string" color="#707070" align="center">
-                {title}
+              <Typography variant="inherit" color="#707070" align="center">
+                <b>{title}</b>
               </Typography>
             </Grid>
           </Grid>
         </Paper>
-
         <Paper
           sx={{
             p: 2,

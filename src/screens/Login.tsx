@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -11,13 +11,16 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { Copyright } from '../components/molecules';
+import { UserContext } from '../context/UserContext';
 
 const Login = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({
-    email: "",
+    user: "",
     password: "",
   });
+
+  const { login } = useContext(UserContext);
 
   const handleInputChange = (e) => {
     setUser({
@@ -26,11 +29,10 @@ const Login = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log(user);
-      //post login axios
+      await login(user);
       navigate('/inicio')
     } catch (error) {
       console.log(error);
@@ -76,23 +78,20 @@ const Login = () => {
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Correo Electronico"
-              name="email"
+              id='user'
+              label="Username"
+              name="user"
               onChange={handleInputChange}
-              // autoComplete="email"
-              autoFocus
             />
             <TextField
               margin="normal"
               required
               fullWidth
+              id='password'
+              label="Password"
               name="password"
-              label="Contraseña"
               type="password"
-              id="password"
               onChange={handleInputChange}
-            // autoComplete="cur rent-password"
             />
             <Button
               type="submit"
