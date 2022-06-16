@@ -9,11 +9,11 @@ const EnterpriseLogo = () => {
         <img src={require("../../assets/img/logo1.webp")} alt="Avatar" />
       </Grid>
 
-      <Grid item xs={12} sm={12} md={8} lg={8} paddingLeft={2}>
-        <Typography variant="h5" color="#005F7F" align="center" marginLeft={3}>
+      <Grid item xs={12} sm={12} md={8} lg={8}>
+        <Typography variant="h5" color="#005F7F" align="center">
           <b>Fundación Grupo Terra</b>
         </Typography>
-        <Typography variant="caption" color="#00B2E3" align="center">
+        <Typography variant="subtitle2" color="#00B2E3" align="center">
           correo@fundaciongrupoterra.com
         </Typography>
       </Grid>
