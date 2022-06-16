@@ -49,8 +49,9 @@ const Sidebar = ({ open, toggleDrawer }) => {
         }}
       >
         <img
-          src={`https://cdn-sharing.adobecc.com/content/storage/id/urn:aaid:sc:US:98d18f69-674c-423f-87a4-b19d4c153be6;revision=0?component_id=0ce55e10-d268-4e07-a1e8-913190db8898&api_key=CometServer1&access_token=1655354814_urn%3Aaaid%3Asc%3AUS%3A98d18f69-674c-423f-87a4-b19d4c153be6%3Bpublic_50ed773ca8af2b79963d73a0d8c02582e99b9134`}
-          srcSet={`https://cdn-sharing.adobecc.com/content/storage/id/urn:aaid:sc:US:98d18f69-674c-423f-87a4-b19d4c153be6;revision=0?component_id=0ce55e10-d268-4e07-a1e8-913190db8898&api_key=CometServer1&access_token=1655354814_urn%3Aaaid%3Asc%3AUS%3A98d18f69-674c-423f-87a4-b19d4c153be6%3Bpublic_50ed773ca8af2b79963d73a0d8c02582e99b9134`}
+          // src={`https://cdn-sharing.adobecc.com/content/storage/id/urn:aaid:sc:US:98d18f69-674c-423f-87a4-b19d4c153be6;revision=0?component_id=0ce55e10-d268-4e07-a1e8-913190db8898&api_key=CometServer1&access_token=1655354814_urn%3Aaaid%3Asc%3AUS%3A98d18f69-674c-423f-87a4-b19d4c153be6%3Bpublic_50ed773ca8af2b79963d73a0d8c02582e99b9134`}
+          // srcSet={`https://cdn-sharing.adobecc.com/content/storage/id/urn:aaid:sc:US:98d18f69-674c-423f-87a4-b19d4c153be6;revision=0?component_id=0ce55e10-d268-4e07-a1e8-913190db8898&api_key=CometServer1&access_token=1655354814_urn%3Aaaid%3Asc%3AUS%3A98d18f69-674c-423f-87a4-b19d4c153be6%3Bpublic_50ed773ca8af2b79963d73a0d8c02582e99b9134`}
+          src={require("../../assets/img/logo2.webp")}
           alt={"Red Medicatel"}
           loading="lazy"
           width="170"

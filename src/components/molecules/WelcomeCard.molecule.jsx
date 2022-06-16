@@ -40,29 +40,13 @@ const WelcomeCard = () => {
             color="#AAAAAA"
             align="left"
             marginLeft={5}
+            marginBottom={3}
           >
             Agenda y ten toda la información médica de tu empresa.
           </Typography>
-          <CustomButton title="Agendar" />
+          <CustomButton title="Agendar" marginLeft={5} />
         </Paper>
       </Grid>
-      {/* //! considerar moverlo */}
-      {/* <Grid item xs={12} md={8} lg={3}>
-        <Paper
-          sx={{
-            p: 2,
-            display: "flex",
-            // flexDirection: "row",
-            height: "299px",
-            justifyContent: "center",
-            backgroundColor: "#EFEFEF",
-          }}
-        >
-          <Typography variant="h6" color="#005F7F" align="center" marginTop={5}>
-            Facturacion, <b>Proximamente</b>
-          </Typography>
-        </Paper>
-      </Grid> */}
     </Grid>
   );
 };

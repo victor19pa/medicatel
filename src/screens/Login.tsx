@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from "react-router-dom";
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -12,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import { Copyright } from '../components/molecules';
 
 const Login = () => {
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -29,6 +31,7 @@ const Login = () => {
     try {
       console.log(user);
       //post login axios
+      navigate('/inicio')
     } catch (error) {
       console.log(error);
     }

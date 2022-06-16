@@ -1,18 +1,23 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
 import ListSubheader from "@mui/material/ListSubheader";
 import LogoutIcon from "@mui/icons-material/Logout";
 import Typography from "@mui/material/Typography";
 
 const SecondaryListItems = () => {
+  const navigate = useNavigate();
+
+  const logout = () => {
+    navigate("/login");
+  };
   return (
     <>
       <ListSubheader component="div" inset>
         Opciones
       </ListSubheader>
-      <ListItemButton>
+      <ListItemButton onClick={logout}>
         <ListItemIcon>
           <LogoutIcon />
         </ListItemIcon>

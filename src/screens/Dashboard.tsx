@@ -15,14 +15,8 @@ const Dashboard = () => {
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
-        <Navbar
-          open={open}
-          toggleDrawer={toggleDrawer}
-        />
-        <Sidebar
-          open={open}
-          toggleDrawer={toggleDrawer}
-        />
+        <Navbar open={open} toggleDrawer={toggleDrawer} title={"Inicio"} />
+        <Sidebar open={open} toggleDrawer={toggleDrawer} />
         <MainSection />
       </Box>
     </ThemeProvider>

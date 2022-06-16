@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 
-const CustomButton = ({ title, onClick, colorBtn, colorTxt }) => {
+const CustomButton = ({ title, onClick, colorBtn, colorTxt, marginLeft }) => {
   const ColorButton = styled(Button)(({ theme }) => ({
     color: colorTxt ? colorTxt : "FFF",
     backgroundColor: colorBtn ? colorBtn : "#005F7F",
@@ -17,7 +17,7 @@ const CustomButton = ({ title, onClick, colorBtn, colorTxt }) => {
     <Stack
       spacing={2}
       direction="row"
-      // marginLeft={5}
+      marginLeft={marginLeft}
       // marginTop={3}
       onClick={onClick}
     >

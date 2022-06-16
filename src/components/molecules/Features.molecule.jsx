@@ -7,7 +7,7 @@ import { CustomButton } from "../atoms";
 
 const Features = ({ mainCharacter, title, covid }) => {
   return (
-    <Grid item xs={12} md={8} lg={4}>
+    <Grid item xs={12} md={4} lg={4}>
       {covid && (
         <Paper
           sx={{

@@ -1,15 +1,21 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import GroupIcon from "@mui/icons-material/Group";
 import Typography from "@mui/material/Typography";
 
 const MainListItems = () => {
+  const navigate = useNavigate();
+
+  const handlePage = (page) => {
+    navigate(page);
+  };
+
   return (
     <>
-      <ListItemButton>
+      <ListItemButton onClick={() => handlePage("/inicio")}>
         <ListItemIcon>
           <DashboardIcon />
         </ListItemIcon>
@@ -19,7 +25,7 @@ const MainListItems = () => {
         {/* <ListItemText primary="Empresa" color="#005F7F" /> */}
       </ListItemButton>
 
-      <ListItemButton>
+      <ListItemButton onClick={() => handlePage("/colaboradores")}>
         <ListItemIcon>
           <GroupIcon />
         </ListItemIcon>

@@ -26,12 +26,9 @@ const MainSection = () => {
       <Container sx={{ my: 4 }} lg={8}>
         <Grid container spacing={3} marginTop={1}>
           <Grid item xs={12} sm={12} md={12} lg={8}>
-            {/* Welcome */}
             <WelcomeCard />
-            {/* Enterprise Logo/info */}
             <EnterpriseInfo />
-            {/* 3 Cards */}
-            <Grid container spacing={3} marginTop={1}>
+            <Grid container spacing={1} marginTop={1}>
               <Features mainCharacter={"123"} title={"Colaboradores"} />
               <Features mainCharacter={"29"} title={"Citas Agendadas"} />
               <Features

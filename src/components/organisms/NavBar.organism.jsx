@@ -26,7 +26,7 @@ const AppBar = styled(MuiAppBar, {
 
 const drawerWidth = 240;
 
-const NavBar = ({ open, toggleDrawer }) => {
+const NavBar = ({ open, toggleDrawer, title }) => {
   return (
     <AppBar position="absolute" open={open}>
       <Toolbar
@@ -53,7 +53,7 @@ const NavBar = ({ open, toggleDrawer }) => {
           noWrap
           sx={{ flexGrow: 1 }}
         >
-          Inicio
+          {title}
         </Typography>
       </Toolbar>
     </AppBar>
