@@ -23,7 +23,7 @@ const UserProvider = (props) => {
 
   useEffect(() => {
     if (!userState) return;
-    localStorage.setItem("user", JSON.stringify(userState));
+    localStorage.setItem("userActive", JSON.stringify(userState));
   }, [userState]);
 
   const login = async (body) => {
