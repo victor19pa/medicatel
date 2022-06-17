@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/medicatel/static/js/main.8dc7e61e.js",
+    "static/media/user.png": "/medicatel/static/media/user.e582e4ba7aae2cecd658.png",
+    "static/media/logo2.webp": "/medicatel/static/media/logo2.92627550f4adebbddde1.webp",
+    "static/media/logo1.webp": "/medicatel/static/media/logo1.1a8b463c91cf085a858b.webp",
+    "index.html": "/medicatel/index.html",
+    "main.8dc7e61e.js.map": "/medicatel/static/js/main.8dc7e61e.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.8dc7e61e.js"
+  ]
+}
